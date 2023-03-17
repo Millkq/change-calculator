@@ -19,30 +19,34 @@ public class autoChange
 			nickels = 0, 
 			quaters = 0,
 			pennies = 0;
-		int Dollars = 0;
+		int dollars = 0;
 		
-		double SmallChange = (payed-price);
-		
-		while (SmallChange > 0) {
-		if (SmallChange >= 1) 
-			Dollars = (int)(SmallChange/1);
-		SmallChange = (SmallChange-Dollars);
-		if (SmallChange >= 0.25 && SmallChange < 1) 
-			quaters = (int) (SmallChange/0.25);
-		SmallChange = (SmallChange-(quaters*0.25));
-		if (SmallChange >= 0.10)
-			dimes = (int)(SmallChange/0.10);
-		SmallChange = (SmallChange-(dimes*0.10));
-		if (SmallChange >= 0.05 && SmallChange < 0.10) 
-		    nickels = (int) (SmallChange/0.05);
-		SmallChange = (SmallChange-(nickels*0.05));
-		if (SmallChange >= 0.01 && SmallChange < 0.05) 
-		    pennies = (int)Math.round((SmallChange/0.01));
-		break;
+		double smallChange = (payed-price);
+		dollars = (int)smallChange;
+		smallChange = smallChange - dollars;
+		if(smallChange >= 0.25) {
+			quaters = (int) (smallChange/0.25);
+			smallChange = smallChange - (quaters*0.25);
+			System.out.println((quaters*0.25));
 		}
+		if(smallChange >= 0.10) {
+			dimes = (int) (smallChange/0.10);
+			smallChange = (smallChange - ((dimes)*0.10));
+			System.out.println((dimes*0.10));
+		}
+		if(smallChange >= 0.05) {
+			nickels = (int) (smallChange/0.05);
+			smallChange = (smallChange - (nickels*0.05));
+			System.out.println((nickels*0.05));
+		}
+		if(smallChange >= 0.01) {
+			pennies = (int)(smallChange*100);
+		}
+		
+		
 		System.out.println("Your bought item of price: " + price);
 		System.out.println("You paid: " + payed);
-		System.out.println("Your change is: \n" + Dollars + " Dollars\n" +
+		System.out.println("Your change is: \n" + dollars + " Dollars\n" +
 		quaters + " Quaters\n" + dimes +" Dimes\n" + nickels + " nickels\n"+pennies+
 				" pennies"); 
 	}
