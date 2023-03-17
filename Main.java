@@ -27,17 +27,14 @@ public class autoChange
 		if(smallChange >= 0.25) {
 			quaters = (int) (smallChange/0.25);
 			smallChange = smallChange - (quaters*0.25);
-			System.out.println((quaters*0.25));
 		}
 		if(smallChange >= 0.10) {
 			dimes = (int) (smallChange/0.10);
 			smallChange = (smallChange - ((dimes)*0.10));
-			System.out.println((dimes*0.10));
 		}
 		if(smallChange >= 0.05) {
 			nickels = (int) (smallChange/0.05);
 			smallChange = (smallChange - (nickels*0.05));
-			System.out.println((nickels*0.05));
 		}
 		if(smallChange >= 0.01) {
 			pennies = (int)(smallChange*100);
